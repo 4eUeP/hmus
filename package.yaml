@@ -1,0 +1,53 @@
+name:                hmus
+version:             0.0.1.0
+github:              "mumuxme/hmus"
+license:             GPL-3
+author:              "mu"
+maintainer:          "laxcatmu@gmail.com"
+copyright:           "2018 Mu"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/mumuxme/hmus#readme>
+
+dependencies:
+- base >= 4.8 && < 5
+- vty
+- brick
+- directory
+- filepath
+- microlens
+- microlens-th
+- vector
+- text
+- text-zipper
+- process
+- unix
+- transformers
+- megaparsec
+- regex
+- htaglib
+- filemanip
+
+library:
+  source-dirs: src
+
+executables:
+  hmus:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hmus
