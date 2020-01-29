@@ -1,0 +1,42 @@
+cabal-version:      2.2
+name:               hmus
+version:            0.1.0.0
+synopsis:           Simple terminal audio player based on libvlc.
+description:
+  Please see the README on Github at <https://github.com/4eUeP/hmus#readme>
+
+license:            BSD-3-Clause
+license-file:       LICENSE
+copyright:          Copyright (c)
+author:             mu
+maintainer:         mu@laxcat.xyz
+tested-with:        GHC ==8.8.4 || ==8.10.3
+category:           Music
+homepage:           https://github.com/4eUeP/hmus
+bug-reports:        https://github.com/4eUeP/hmus/issues
+build-type:         Simple
+extra-source-files:
+  ChangeLog.md
+  README.md
+
+source-repository head
+  type:     git
+  location: https://github.com/4eUeP/hmus
+
+library
+  hs-source-dirs:   src
+  build-depends:    base >=4.11 && <5
+  default-language: Haskell2010
+  ghc-options:
+    -Wall -Wcompat -Widentities -Wincomplete-record-updates
+    -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
+
+executable hmus
+  hs-source-dirs:   app
+  main-is:          Main.hs
+  build-depends:    base >=4.11 && <5
+  default-language: Haskell2010
+  ghc-options:
+    -Wall -Wcompat -Widentities -Wincomplete-record-updates
+    -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
+    -threaded -rtsopts -with-rtsopts=-N
